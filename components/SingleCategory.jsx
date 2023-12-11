@@ -9,6 +9,7 @@ export default function SingleCategory({params}) {
 
   const [category, setCategory] = useState([]);
   const [allproduct, setAllproduct] = useState([])
+  
   useEffect(() => {
     const fetchData = async () => {
       const res = await fetch("http://localhost:5003/restaurant");
@@ -18,12 +19,7 @@ export default function SingleCategory({params}) {
     fetchData();
   }, []);
 
-<<<<<<< HEAD
-useEffect(()=>{
-  const filterProduct = allproduct.filter(item=>item.category==params)
-  setCategory(filterProduct);
-  console.log(filterProduct);
-=======
+
     useEffect(()=>{
   const filterProduct = allproduct.filter(item=>item.category==params)
   setCategory(filterProduct);
@@ -31,10 +27,7 @@ useEffect(()=>{
 
 },[allproduct])
 
-  const addToCartLocalhost = (id) => {
->>>>>>> 40d0e35f5208953af6e6fa36edfb17a2e3c244ac
 
-},[allproduct])
 
 
 
