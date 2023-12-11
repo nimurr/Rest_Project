@@ -1,0 +1,75 @@
+{
+    "restaurant":[
+        {
+            "id": 1,
+            "image": "https://i.ibb.co/xCJCRYS/chicken-with-sambal-sauce-deep-fried-hot-spicy-menu-indonesia-combination-malaysian-fusion-style-sid.jpg",
+            "review": "4.7",
+            "price": "400",
+            "title": "Delicious Bistro",
+            "discount":20,
+            "category":"pizza"
+        },
+        {
+            "id": 2,
+            "image": "https://i.ibb.co/DYZWQGp/farfalle-pasta-with-seafood-cherry-tomatoes-green-peas-2829-9119.jpg",
+            "review": "4.2",
+            "price": "200",
+            "title": "Tasty Grill House",
+            "discount":20,
+            "category":"barger"
+
+        },
+        {
+            "id": 3,
+            "image": "https://i.ibb.co/g6jCxmr/download.jpg",
+            "review": "4.9",
+            "price": "350",
+            "title": "Cuisine Paradise",
+            "category":"sanduage"
+        },
+        {
+            "id": 4,
+            "image": "https://i.ibb.co/BnbjLL1/download.jpg",
+            "review": "4.0",
+            "price": "250",
+            "title": "Street Eats",
+            "discount":30,
+            "category":"barger"
+
+        },
+        {
+            "id": 5,
+            "image": "https://i.ibb.co/Y0MkydP/images.jpg",
+            "review": "4.0",
+            "price": "400",
+            "title": "Street Eats",
+            "category":"pizza"
+        },
+        {
+            "id": 6,
+            "image": "https://i.ibb.co/mDsHJFY/images.jpg",
+            "review": "4.0",
+            "price": "300",
+            "title": "Spcaial Chiken ",
+            "discount":35,
+            "category":"sanduage"
+        },
+        {
+            "id": 7,
+            "image": "https://i.ibb.co/FJNqb44/images.jpg",
+            "review": "4.0",
+            "price": "200",
+            "title": "Street Eats",
+            "category":"barger"
+        },
+        {
+            "id": 8,
+            "image": "https://i.ibb.co/f8LWj1b/images.jpg",
+            "review": "4.0",
+            "price": "150",
+            "title": "Street Eats",
+            "discount":45,
+            "category":"sanduage"
+        }
+    ]
+}
