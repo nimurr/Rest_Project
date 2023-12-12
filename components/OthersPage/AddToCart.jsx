@@ -12,7 +12,7 @@ import React, { useEffect , useState } from 'react'
             
             const cartItem = localStorage.getItem('addToCart');
             const pars = JSON.parse(cartItem);
-            const res = await fetch('http://localhost:5003/restaurant')
+            const res = await fetch('http://localhost:5002/restaurant')
             const product = await res.json();
             setAddtoCart(product.filter(d => pars?.includes(d.id)));
 

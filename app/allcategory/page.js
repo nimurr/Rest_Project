@@ -1,24 +1,11 @@
+import React from 'react'
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
-import { MdOutlineChevronRight } from "react-icons/md";
 
-export default function Category() {
+export default function page() {
   return (
-    <div className="max-w-7xl mx-auto sm:my-32 my-10 px-4 lg:px-0">
-      
-        <div className='flex justify-between my-10'>
-            <div className="">
-                  <h2 className="sm:text-4xl text-xl font-semibold text-[#262261]">
-                    Category
-                  </h2>
-                  <span className="h-1 sm:w-52 bg-[#EE4036] block mt-2"></span>
-              </div>
-              <Link href={'/allcategory'} className="text-red-500 font-semibold cursor-pointer underline">View All <MdOutlineChevronRight className="inline" />
-              </Link>
-        </div>
-
-
+    <div className="max-w-7xl mx-auto my-10">
+      <h2 className="text-center mb-20">All category</h2>
       <div className="grid xl:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-5">
         <Link href={'/category/burger'} className="flex items-center gap-5 hover:bg-slate-200 cursor-pointer border p-4 rounded-[50px]">
           <Image
@@ -46,7 +33,7 @@ export default function Category() {
             <h3>7:20AM to 8:00PM</h3>
           </div>
         </Link>
-        <Link  href={'/category/sanduege'}  className="flex items-center gap-5 hover:bg-slate-200 cursor-pointer border p-4 rounded-[50px]">
+        <Link  href={'/category/sanduage'}  className="flex items-center gap-5 hover:bg-slate-200 cursor-pointer border p-4 rounded-[50px]">
           <Image
             width={300}
             height={200}
@@ -72,7 +59,7 @@ export default function Category() {
             <h3>7:20AM to 8:00PM</h3>
           </div>
         </Link>
-        <Link  href={'/category/burger'}  className="flex items-center gap-5 hover:bg-slate-200 cursor-pointer border p-4 rounded-[50px]">
+        <Link  href={'/category/barger'}  className="flex items-center gap-5 hover:bg-slate-200 cursor-pointer border p-4 rounded-[50px]">
           <Image
             width={300}
             height={200}
@@ -85,7 +72,7 @@ export default function Category() {
             <h3>7:20AM to 8:00PM</h3>
           </div>
         </Link>
-        <Link  href={'/category/burger'}  className="flex items-center gap-5 hover:bg-slate-200 cursor-pointer border p-4 rounded-[50px]">
+        <Link  href={'/category/barger'}  className="flex items-center gap-5 hover:bg-slate-200 cursor-pointer border p-4 rounded-[50px]">
           <Image
             width={300}
             height={200}
@@ -111,7 +98,7 @@ export default function Category() {
             <h3>7:20AM to 8:00PM</h3>
           </div>
         </Link>
-        <Link  href={'/category/burger'}  className="flex items-center gap-5 hover:bg-slate-200 cursor-pointer border p-4 rounded-[50px]">
+        <Link href={'/category/burger'}  className="flex items-center gap-5 hover:bg-slate-200 cursor-pointer border p-4 rounded-[50px]">
           <Image
             width={300}
             height={200}
@@ -126,5 +113,5 @@ export default function Category() {
         </Link>
       </div>
     </div>
-  );
+  )
 }

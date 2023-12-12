@@ -6,6 +6,7 @@ module.exports = nextConfig;
 module.exports = {
   images: {
     domains: [
+      "swiperjs.com",
       "i.ibb.co",
       "images.prismic.io",
       "patricksaada.com",

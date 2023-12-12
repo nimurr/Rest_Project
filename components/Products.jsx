@@ -6,7 +6,7 @@ import { MdOutlineChevronRight } from "react-icons/md";
 
 async function Products() {
   const res = await fetch(
-    "http://localhost:5003/restaurant"
+    "http://localhost:5002/restaurant"
   );
   const datas = await res.json();
 

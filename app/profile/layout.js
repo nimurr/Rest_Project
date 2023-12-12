@@ -9,8 +9,9 @@ const ProfileLayout = ({ children }) => {
 
     return (
         <div className='max-w-7xl mx-auto py-10 min-h-[80vh] gap-10 flex flex-col md:flex-row'>
-            <div className='md:w-1/4 p-5 rounded flex justify-center bg-gray-100'>
+            <div className='md:w-1/4  rounded flex justify-center bg-gray-100'>
                 <div className='space-y-2'>
+                    <div className='p-5'>
                     <Image
                         alt='profie image'
                         width={300}
@@ -20,17 +21,18 @@ const ProfileLayout = ({ children }) => {
                     />
                     <small className='text-center block'>abc@abc.com</small>
                     <h3 className='text-center text-xl font-semibold text-gray-600'>Mr. Jos Batler</h3>
+                    
+                    </div>
                     <div className='flex flex-col justify-center text-center py-5 gap-2 text-lg'>
                         <div className='text-start flex flex-col text-gray-700'>
                             <Link className={`hover:text-red-500 p-2 ${pathName == '/profile' ? 'text-red-600 ' : ''} hover:bg-gray-200`} href={'/profile'}>Profile</Link>
                             <hr className='border-[1.2px] border-gray-200' />
                             <Link className={`hover:text-red-500 p-2 ${pathName == '/profile/orders' ? 'text-red-600 ' : ''} hover:bg-gray-200`} href={'/profile/orders'}>Orders</Link>
                             <hr className='border-[1.2px] border-gray-200' />
-
                             <Link className={`hover:text-red-500  p-2 ${pathName == '/profile/passwordupdate' ? 'text-red-600 ' : ''} hover:bg-gray-200`} href={'/profile/passwordupdate'}>Password Update</Link><hr/>
+                            <Link className={`hover:text-red-500  p-2 ${pathName == '/profile/deleveryaddress' ? 'text-red-600 ' : ''} hover:bg-gray-200`} href={'/profile/deleveryaddress'}>Delevery Address</Link>
                             <Link className={`hover:text-red-500  p-2 ${pathName == '/profile/favorite' ? 'text-red-600 ' : ''} hover:bg-gray-200`} href={'/profile/favorite'}>Favorite</Link>
                             <hr className='border-[1.2px] border-gray-200' />
-
                         </div>
                     </div>
                 </div>
