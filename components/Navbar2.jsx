@@ -159,9 +159,9 @@ export default function Navbar2() {
                 </Link>
               </ul>
             </div>
-            <label className=" bg-transparent cursor-pointer rounded-md overflow-hidden flex items-center gap-2 bg-white pr-1">
+            <label className=" bg-transparent cursor-pointer border-2 rounded-md overflow-hidden flex items-center gap-2 bg-white pr-1">
               <input
-                className="border-0 outline-0 p-2 outline-none"
+                className="border-none outline-0 p-2 outline-none"
                 type="text"
                 placeholder="Search Item .."
               />

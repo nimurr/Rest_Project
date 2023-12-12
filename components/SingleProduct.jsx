@@ -10,71 +10,68 @@ export default function SingleProduct({ product }) {
     const { id, image, review, price, title } = product;
 
 
-    const addToCartLocalhost = (id) => {
+    const addToCartLocalhost = (value) => {
 
         const cartItem = localStorage.getItem('addToCart')
         const pars = JSON.parse(cartItem);
 
-        if(pars && pars.find(d => d == id )){
-           return Swal.fire({
-            icon: "error",
-            title: "Already Added !",
-            text: "Something went wrong!",
-            footer: '<a href="#">Why do I have this issue?</a>'
-          });
+        if (pars && pars.find(d => d.id == value)) {
+            return Swal.fire({
+                icon: "error",
+                title: "Already Added !",
+                text: "Something went wrong!",
+                footer: '<a href="#">Why do I have this issue?</a>'
+            });
         }
 
-        else if(pars){
-            const data = [id ,...pars]
+        else if (pars) {
+            const data = [{id:value,quantity:1}, ...pars]
             Swal.fire({
                 title: "Add To Card Successfully!",
                 text: "You clicked the button!",
                 icon: "success"
-              });
-           return localStorage.setItem('addToCart', JSON.stringify(data))
+            });
+            return localStorage.setItem('addToCart', JSON.stringify(data))
         }
-        else{
+        else {
             Swal.fire({
                 title: "Add To Card Successfully!",
                 text: "You clicked the button!",
                 icon: "success"
-              });
-           return localStorage.setItem('addToCart', JSON.stringify([id]))
+            });
+            return localStorage.setItem('addToCart', JSON.stringify([{id:value,quantity:1}]))
         }
-        // const data = [id, ...pars];
-
-
     }
 
-    const handleFavorite = (id) =>{
+    const handleFavorite = (id) => {
 
         const cartItem = localStorage.getItem('favorite')
         const pars = JSON.parse(cartItem);
-        if(pars && pars.find(d => d == id )){
-           return Swal.fire({
-            icon: "error",
-            title: "Already Added !",
-            text: "Something went wrong!",
-            footer: '<a href="#">Why do I have this issue?</a>'
-          });
+        if (pars && pars.find(d => d == id)) {
+            return Swal.fire({
+                icon: "error",
+                title: "Already Added !",
+                text: "Something went wrong!",
+                footer: '<a href="#">Why do I have this issue?</a>'
+            });
         }
 
-        else if(pars){
-            const data = [id ,...pars]
+        else if (pars) {
+            const data = [id, ...pars]
             Swal.fire({
                 title: "Fovorite Add Successfully!",
                 text: "You clicked the button!",
                 icon: "success"
-              });
-           return localStorage.setItem('favorite', JSON.stringify(data))
+            });
+            return localStorage.setItem('favorite', JSON.stringify(data))
         }
-        else{
+        else {
             Swal.fire({
                 title: "Fovorite Add Successfully!",
                 text: "You clicked the button!",
                 icon: "success"
-              });
-           return localStorage.setItem('favorite', JSON.stringify([id]))
+            });
+            return localStorage.setItem('favorite', JSON.stringify([id]))
         }
 
     }
@@ -88,7 +85,7 @@ export default function SingleProduct({ product }) {
                 <div className=' flex flex-col '>
                     <div className='h-[250px] relative flex-grow'>
                         <Link href={`/checkout/${id}`}>
-                            <Image  width={250} height={250} className="rounded-t w-full h-full 
+                            <Image width={250} height={250} className="rounded-t w-full h-full 
                             group-hover:scale-105 transition  z-0" src={image} alt="" />
                         </Link>
                         <span className='absolute top-2 left-2 bg-red-500 text-white rounded-xl px-2 '>
@@ -98,8 +95,8 @@ export default function SingleProduct({ product }) {
                             }
                         </span>
                         <div className='absolute top-2 right-0 group-hover:right-2 group-hover:flex flex-col justify-center gap-3 hidden'>
-                            <FaCartArrowDown onClick={()=>addToCartLocalhost(id)} className='cursor-pointer  bg-red-500  text-white  p-2 text-4xl rounded' />
-                            <FaRegHeart onClick={()=>handleFavorite(id)} className='cursor-pointer  bg-red-500  text-white  p-2 text-4xl rounded' />
+                            <FaCartArrowDown onClick={() => addToCartLocalhost(id)} className='cursor-pointer  bg-red-500  text-white  p-2 text-4xl rounded' />
+                            <FaRegHeart onClick={() => handleFavorite(id)} className='cursor-pointer  bg-red-500  text-white  p-2 text-4xl rounded' />
                         </div>
                     </div>
 

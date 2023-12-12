@@ -7,6 +7,7 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import { FaStar } from "react-icons/fa6";
 import { FaRegStarHalfStroke } from "react-icons/fa6";
+import Swal from 'sweetalert2';
 
 
 
@@ -39,7 +40,39 @@ function Checkout({params}) {
         setValue(value+1)
     }
 
-    console.log(value)
+
+    const addToCartLocalhost = () => {
+
+        const cartItem = localStorage.getItem('addToCart')
+        const pars = JSON.parse(cartItem);
+
+        if(pars && pars.find(d => d.id == params.id )){
+           return Swal.fire({
+            icon: "error",
+            title: "Already Added !",
+            text: "Something went wrong!",
+            footer: '<a href="#">Why do I have this issue?</a>'
+          });
+        }
+
+        else if(pars){
+            const data = [{id:params.id,quantity:value} ,...pars]
+            Swal.fire({
+                title: "Add To Card Successfully!",
+                text: "You clicked the button!",
+                icon: "success"
+              });
+           return localStorage.setItem('addToCart', JSON.stringify(data))
+        }
+        else{
+            Swal.fire({
+                title: "Add To Card Successfully!",
+                text: "You clicked the button!",
+                icon: "success"
+              });
+           return localStorage.setItem('addToCart', JSON.stringify([{id:params.id,quantity:value}]))
+        }
+    }
 
 
 
@@ -86,13 +119,17 @@ function Checkout({params}) {
                                 </select>
                                 <span className="ml-2 font-semibold">Enter Your Size</span>
                             </div>
+                            <div>
+
+                            </div>
                             <div className="flex gap-5 items-center">
                                 <p className="bordered border-2 text-xl px-2 py-2">
                                     <button onClick={handleQuintity} className="px-4">-</button>
                                     <span>{value}</span>
                                     <button onClick={handleQuintityIncress} className="px-4">+</button>
                                 </p>
-                                <Link href={`/order`} className="text-xl text-white rounded bg-[#ee3f36e8] hover:bg-[#EE4036] px-4 py-3">Order Now</Link>
+                                <Link href={`/order`} className="text-xl text-white rounded bg-[#ee3f36e8] hover:bg-[#EE4036] py-3 w-40 text-center">By Now</Link>
+                                <button onClick={addToCartLocalhost} className="text-xl text-white rounded bg-[#ee3f36e8] hover:bg-[#EE4036] py-3 w-40 text-center">Add to Cart</button>
                             </div>
                             <p> FREE SHIPPING OVER $50</p>
                         </div>
