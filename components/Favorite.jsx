@@ -16,7 +16,7 @@ export default function Favorite() {
 
             const cartItem = localStorage.getItem('favorite');
             const pars = JSON.parse(cartItem);
-            const res = await fetch('http://localhost:5003/restaurant')
+            const res = await fetch('http://localhost:5002/restaurant')
             const product = await res.json();
             setAddToFavorite(product.filter(d => pars?.includes(d.id)));
 

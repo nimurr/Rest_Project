@@ -7,13 +7,14 @@ import Swal from "sweetalert2";
 
 export default function SingleCategory({params}) {
     
+  console.log(params)
 
   const [category, setCategory] = useState([]);
   const [allproduct, setAllproduct] = useState([])
   
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch("http://localhost:5003/restaurant");
+      const res = await fetch("http://localhost:5002/restaurant");
       const product = await res.json();
       setAllproduct(product);
     };
@@ -62,11 +63,6 @@ const addToCartLocalhost = (value) => {
       return localStorage.setItem('addToCart', JSON.stringify([{id:value,quantity:1}]))
   }
 }
-
-
-
-
-
 
   return (
     <div>

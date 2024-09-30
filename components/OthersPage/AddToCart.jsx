@@ -14,9 +14,13 @@ function AddToCart() {
 
             const cartItem = localStorage.getItem('addToCart');
             const pars = JSON.parse(cartItem);
+ dipu
             setLocaldataInfo(pars)
 
             const res = await fetch('http://localhost:5003/restaurant')
+
+            const res = await fetch('http://localhost:5002/restaurant')
+ main
             const product = await res.json();
             setAddtoCart(product.filter(d => pars?.find(item => item.id == d.id)));
 
