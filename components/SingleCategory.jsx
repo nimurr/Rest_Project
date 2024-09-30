@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { FaCartArrowDown, FaRegHeart, FaStar } from "react-icons/fa";
+import Swal from "sweetalert2";
 
 export default function SingleCategory({params}) {
     
@@ -30,6 +31,38 @@ export default function SingleCategory({params}) {
 
 
 
+const addToCartLocalhost = (value) => {
+
+  const cartItem = localStorage.getItem('addToCart')
+  const pars = JSON.parse(cartItem);
+
+  if (pars && pars.find(d => d.id == value)) {
+      return Swal.fire({
+          icon: "error",
+          title: "Already Added !",
+          text: "Something went wrong!",
+          footer: '<a href="#">Why do I have this issue?</a>'
+      });
+  }
+
+  else if (pars) {
+      const data = [{id:value,quantity:1}, ...pars]
+      Swal.fire({
+          title: "Add To Card Successfully!",
+          text: "You clicked the button!",
+          icon: "success"
+      });
+      return localStorage.setItem('addToCart', JSON.stringify(data))
+  }
+  else {
+      Swal.fire({
+          title: "Add To Card Successfully!",
+          text: "You clicked the button!",
+          icon: "success"
+      });
+      return localStorage.setItem('addToCart', JSON.stringify([{id:value,quantity:1}]))
+  }
+}
 
   return (
     <div>
